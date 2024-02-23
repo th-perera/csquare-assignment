@@ -33,7 +33,7 @@
                         data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="items.php">All Items</a>
-                            <a class="nav-link" href="items.php">Add Item</a>
+                            <a class="nav-link" href="add-item.php">Add Item</a>
                         </nav>
                     </div>
                     <!--  -->

@@ -11,14 +11,14 @@ include('includes/header.php');
         <li class="breadcrumb-item active">Items > All Items</li>
     </ol>
     <?php 
-    // if (isset($_GET['msg'])) {
-    //     $msg = $_GET['msg'];
+    if (isset($_GET['msg'])) {
+        $msg = $_GET['msg'];
 
-    //     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-    //         '.$msg.'
-    //         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    //         </div>';
-    // }
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            '.$msg.'
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+    }
     
     ?>
     <!-- ? -->
