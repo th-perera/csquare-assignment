@@ -47,7 +47,7 @@
                         data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="invoice-report.php">Invoice Report</a>
-                            <a class="nav-link" href="add-item.php">Invoice Item Report</a>
+                            <a class="nav-link" href="invoice-item-report.php">Invoice Item Report</a>
                             <a class="nav-link" href="item-report.php">Item Report</a>
                         </nav>
                     </div>
