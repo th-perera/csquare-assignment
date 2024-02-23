@@ -27,7 +27,7 @@ include('includes/header.php');
             <i class="fas fa-user me-1"></i>
             All Customers
         </div>
-        <div class="card-body">
+        <div class="card-body" id="table">
             <table id="datatablesSimple">
                 <thead>
                     <tr>
@@ -62,9 +62,10 @@ include('includes/header.php');
                             <a href="edit-customer.php?id=<?= $customer['customer_id'] ?>">
                                 <i class="fa-solid fa-pen-to-square fs-4 me-3"></i>
                             </a>
-                            <a href="delete-customer.php?id=<?= $customer['customer_id'] ?>" class="link-danger">
+                            <button type="button" class="btn btn-link link-danger delete-btn"
+                                value="<?= $customer['customer_id'] ?>">
                                 <i class="fa-solid fa-trash fs-4"></i>
-                            </a>
+                            </button>
                         </td>
 
                     </tr>
@@ -87,3 +88,47 @@ include('includes/header.php');
 include('includes/footer.php'); 
 include('includes/scripts.php'); 
 ?>
+
+
+
+
+<!-- popup alert -->
+<script>
+$(document).ready(function() {
+    $('.delete-btn').on('click', function(e) {
+        e.preventDefault();
+
+        var id = $(this).val();
+
+        swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        method: 'POST',
+                        url: 'delete-customer.php',
+                        data: {
+                            'id': id,
+                            'delete-btn': true
+                        },
+                        success: function(response) {
+                            swal("Success!", "Product deleted successfully!",
+                                    "success")
+                                .then(function() {
+                                    // Reload the page without any URL parameters
+                                    window.location.href = window.location.pathname;
+                                });
+                        },
+                    })
+                } else {
+
+                }
+            });
+    })
+});
+</script>
