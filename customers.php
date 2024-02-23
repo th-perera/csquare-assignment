@@ -42,7 +42,7 @@ include('includes/header.php');
                 </thead>
                 <tbody>
                     <?php
-                    $query = "SELECT * FROM customer c JOIN district d ON c.district = d.id";
+                    $query = "SELECT c.id AS customer_id, c.*, d.* FROM customer c JOIN district d ON c.district = d.id";
                     $result = mysqli_query($conn, $query);
                     if(mysqli_num_rows($result) > 0) {
                         
@@ -59,8 +59,12 @@ include('includes/header.php');
                         <td><?= $customer['contact_no'] ?></td>
                         <td><?= $customer['district'] ?></td>
                         <td>
-                            <a href="edit-customer.php"><i class="fa-solid fa-pen-to-square fs-4 me-3"></i></a>
-                            <a href="" class="link-danger"><i class="fa-solid fa-trash fs-4"></i></a>
+                            <a href="edit-customer.php?id=<?= $customer['customer_id'] ?>">
+                                <i class="fa-solid fa-pen-to-square fs-4 me-3"></i>
+                            </a>
+                            <a href="delete-customer.php?id=<?= $customer['customer_id'] ?>" class="link-danger">
+                                <i class="fa-solid fa-trash fs-4"></i>
+                            </a>
                         </td>
 
                     </tr>
