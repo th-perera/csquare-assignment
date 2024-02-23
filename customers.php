@@ -117,7 +117,7 @@ $(document).ready(function() {
                             'delete-btn': true
                         },
                         success: function(response) {
-                            swal("Success!", "Product deleted successfully!",
+                            swal("Success!", "Customer deleted successfully!",
                                     "success")
                                 .then(function() {
                                     // Reload the page without any URL parameters

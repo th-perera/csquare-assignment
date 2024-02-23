@@ -115,13 +115,13 @@ $(document).ready(function() {
                 if (willDelete) {
                     $.ajax({
                         method: 'POST',
-                        url: 'delete-customer.php',
+                        url: 'delete-item.php',
                         data: {
                             'id': id,
                             'delete-btn': true
                         },
                         success: function(response) {
-                            swal("Success!", "Product deleted successfully!",
+                            swal("Success!", "Item deleted successfully!",
                                     "success")
                                 .then(function() {
                                     // Reload the page without any URL parameters
